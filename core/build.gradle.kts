@@ -44,7 +44,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.hieubv-1668.TestJitPackLibs"
             artifactId = "core"
-            version = "1.0.0"
+            version = "1.0.2"
 
             afterEvaluate {
                 from(components["release"])
