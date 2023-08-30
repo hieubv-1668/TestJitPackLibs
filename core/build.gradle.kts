@@ -39,13 +39,12 @@ android {
     }
 }
 
-
 publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.github.hieubv-1668.TestJitPackLibs"
             artifactId = "core"
-            version = "1.0.6"
+            version = "1.0.7"
             afterEvaluate {
                 from(components["release"])
             }
