@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
@@ -29,6 +30,18 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+}
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.hieubv-1668.TestJitPackLibs"
+            artifactId = "special"
+            version = "1.0.1"
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
     }
 }
 

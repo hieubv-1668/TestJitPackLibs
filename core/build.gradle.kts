@@ -44,7 +44,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.hieubv-1668.TestJitPackLibs"
             artifactId = "core"
-            version = "1.0.7"
+            version = "1.0.8"
             afterEvaluate {
                 from(components["release"])
             }
@@ -53,7 +53,6 @@ publishing {
 }
 
 dependencies {
-
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
