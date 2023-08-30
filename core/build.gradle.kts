@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("maven-publish")
 }
-group = findProperty("groupId") ?: ""
+group = "com.github.hieubv-1668.TestJitPackLibs"
 
 android {
     namespace = "com.hieubv.libtest.core"
@@ -39,13 +39,14 @@ android {
     }
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            register<MavenPublication>("release") {
-                groupId = "com.github.hieubv-1668.TestJitPackLibs"
-                artifactId = "core"
-                version = "1.0.5"
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.hieubv-1668.TestJitPackLibs"
+            artifactId = "core"
+            version = "1.0.6"
+            afterEvaluate {
                 from(components["release"])
             }
         }
