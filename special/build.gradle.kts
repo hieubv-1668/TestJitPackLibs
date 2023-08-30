@@ -1,16 +1,15 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("maven-publish")
 }
-group = findProperty("groupId") ?: ""
 
 android {
-    namespace = "com.hieubv.libtest"
+    namespace = "com.example.special"
     compileSdk = 33
 
     defaultConfig {
         minSdk = 24
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -30,26 +29,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
-}
-
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = "com.github.hieubv-1668.TestJitPackLibs"
-            artifactId = "core"
-            version = "1.0.4"
-
-            afterEvaluate {
-                from(components["release"])
-            }
-        }
     }
 }
 

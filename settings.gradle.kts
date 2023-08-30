@@ -18,3 +18,4 @@ dependencyResolutionManagement {
 rootProject.name = "TestJitPackLibs"
 include(":app")
 include(":core")
+include(":special")

@@ -1,14 +1,14 @@
-package com.example.testjitpacklibs.app
+package com.example.special
 
 import android.content.Context
 import android.widget.Toast
 
-class AppExt {
-    fun Context.appShortToast(message: String) {
+class SpecialExt {
+    fun Context.specialShortToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    fun Context.appLongToast(message: String) {
+    fun Context.specialLongToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 }
