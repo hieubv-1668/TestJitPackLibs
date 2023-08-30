@@ -6,7 +6,7 @@ plugins {
 group = findProperty("groupId") ?: ""
 
 android {
-    namespace = "com.hieubv.libtest"
+    namespace = "com.hieubv.libtest.core"
     compileSdk = 33
 
     defaultConfig {
@@ -39,14 +39,13 @@ android {
     }
 }
 
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = "com.github.hieubv-1668.TestJitPackLibs"
-            artifactId = "core"
-            version = "1.0.4"
-
-            afterEvaluate {
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                groupId = "com.github.hieubv-1668.TestJitPackLibs"
+                artifactId = "core"
+                version = "1.0.5"
                 from(components["release"])
             }
         }
